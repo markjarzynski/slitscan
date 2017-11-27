@@ -7,7 +7,7 @@ def main():
 
     parser = argparse.ArgumentParser(add_help=False)
     parser.add_argument('--help', action='help', help='show this help message and exit')
-    parser.add_argument('--version', action='version', version='%(prog)s 0.1.0')
+    parser.add_argument('--version', action='version', version='%(prog)s 0.2.0')
     parser.add_argument('-w', '--width', action='store', dest='width', default=1, help='width')
     parser.add_argument('-h', '--height', action='store', dest='height', default='100%', help='height')
     parser.add_argument('-x', action='store', dest='x', default='50%', help='x position')
