@@ -5,7 +5,7 @@ def readme():
         return f.read()
 
 setup(name='slitscan',
-      version='0.2.1',
+      version='0.3',
       description='Slit-scan photography.',
       url='http://github.com/markjarzynski/slitscan',
       author='Mark Jarzynski',
