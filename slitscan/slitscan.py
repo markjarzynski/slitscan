@@ -3,7 +3,6 @@ import numpy as np
 
 def slitscan(images, width=1, height='100%', x='50%', y=0, velocity_x=0, velocity_y=0, out_width=1, out_height='100%', out_x=0, out_y=0, out_velocity_x=1, out_velocity_y=0):
 
-    #first = imageio.imread(images[0])
     reader = imageio.get_reader(images[0])
     first = reader.get_data(0)
 
@@ -85,17 +84,22 @@ def slitscan(images, width=1, height='100%', x='50%', y=0, velocity_x=0, velocit
         
         print('Processing ' + i)
 
-        #img = imageio.imread(i)
         reader = imageio.get_reader(i)
-        
+
         for j in range(0, reader.get_length()):
        
             if (reader.get_length() > 1):
                 print('Processing ' + i + ', frame ' + str(j))
-
+        
             img = reader.get_data(j)
 
-            overlap = float(out_velocity_x) / out_width
+            overlap = 1
+            if out_velocity_x > 0 && out_velocity_y == 0:
+                overlap = float(out_velocity_x) / out_width
+            elif out_velocity_x == 0 && out_velocity_y > 0:
+                overlap = float(out_velocity_y) / out_height
+            elif out_veloicty_x > 0 & out_velocity_y > 0:
+                overlap = (float(out_velocity_x) / out_width) * (float(out_velocity_y) / out_height)
             if overlap > 1:
                 overlap = 1
 
