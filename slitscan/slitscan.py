@@ -94,11 +94,11 @@ def slitscan(images, width=1, height='100%', x='50%', y=0, velocity_x=0, velocit
             img = reader.get_data(j)
 
             overlap = 1
-            if out_velocity_x > 0 && out_velocity_y == 0:
+            if out_velocity_x > 0 and out_velocity_y == 0:
                 overlap = float(out_velocity_x) / out_width
-            elif out_velocity_x == 0 && out_velocity_y > 0:
+            elif out_velocity_x == 0 and out_velocity_y > 0:
                 overlap = float(out_velocity_y) / out_height
-            elif out_veloicty_x > 0 & out_velocity_y > 0:
+            elif out_veloicty_x > 0 and out_velocity_y > 0:
                 overlap = (float(out_velocity_x) / out_width) * (float(out_velocity_y) / out_height)
             if overlap > 1:
                 overlap = 1

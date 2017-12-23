@@ -7,7 +7,7 @@ def main():
 
     parser = argparse.ArgumentParser(add_help=False)
     parser.add_argument('--help', action='help', help='show this help message and exit')
-    parser.add_argument('--version', action='version', version='%(prog)s 0.3')
+    parser.add_argument('--version', action='version', version='%(prog)s 0.3.1')
     parser.add_argument('-w', '--width', action='store', dest='width', default=1, help='slit width')
     parser.add_argument('-h', '--height', action='store', dest='height', default='100%', help='slit height')
     parser.add_argument('-x', action='store', dest='x', default='50%', help='Starting slit x position')
